@@ -25,7 +25,6 @@ class dts:
             if(key+self.z<0 or key+self.z>=len(self.vec)):
                 return 0  
             return self.vec[key+self.z]
-
     def __setitem__(self, key, value):
         if(key+self.z>=len(self.vec)):
             self.vec += [0]*(key+self.z-len(self.vec)+1)
