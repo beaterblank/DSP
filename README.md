@@ -4,9 +4,54 @@ python program to perform discrete time operations
 check tutorial.py for sample uses
 
 ## This Module can perform Addition ,Subsraction, Dot-product, Convolution, Corelation, Scalar-product, Right and Left Shifting time, Time-scaling, Time reversal, Z-Transform, Fourier-Transform and more On discrete time Signals
+<p>
+
+## Sample output for addition
+adding signals([ 0^ 1 2 3 ],[ 1^ 1 2 1 ])
+range is 0,4
+
+y[0]=x[0]+h[0]=1+0=1
+
+y[1]=x[1]+h[1]=1+1=2
+
+y[2]=x[2]+h[2]=2+2=4
+
+y[3]=x[3]+h[3]=1+3=4
+
+hence y = [ 1^ 2 4 4 ]
+
+## Sample output for Subsraction
+substracting signals ([ 0^ 1 2 3 ],[ 1^ 1 2 1 ])
+range is 0,4
+
+y[0]=x[0]-h[0]=0-1=-1
+
+y[1]=x[1]-h[1]=1-1=0
+
+y[2]=x[2]-h[2]=2-2=0
+
+y[3]=x[3]-h[3]=3-1=2
+
+hence y = [ -1^ 0 0 2 ]
+
+## Sample output for dot_product
+
+multipyting signals([ 0^ 1 2 3 ],[ 1^ 1 2 1 ])
+range is 0,4
+
+y[0]=x[0]*h[0]=1*0=0
+
+y[1]=x[1]*h[1]=1*1=1
+
+y[2]=x[2]*h[2]=2*2=4
+
+y[3]=x[3]*h[3]=1*3=3
+
+hence y = [ 0^ 1 4 3 ]
+
 
 ## Sample output for convolution
-<p>
+
 x[n] convolution h[n]
   
 given x[n]  : [ 0^ 1 2 3 ]
@@ -126,5 +171,39 @@ y[3]=Σ([ 0^ 1 2 3 ].[ 0^ 0 0 1 1 2 1 ])
 y[3]=3
   
 hence y[n]=[ 0 1 4 8^ 9 5 3 ]
-  
+
+
+## Sample output Fourier Transfrom 
+Fourier_Transfrom([ 0^ 1 2 3 ])
+
+range is 0,4
+
+y(z)=Σx[n]e**(-iwn)
+
+n=0 -> 0
+
+n=1 -> exp(-1.0*I*w)
+
+n=2 -> 2*exp(-2.0*I*w)
+
+n=3 -> 3*exp(-3.0*I*w)
+
+hence y(z)=3*exp(-3.0*I*w) + 2*exp(-2.0*I*w) + exp(-1.0*I*w)
+
+## Z Transform
+Z_Transfrom([ 0^ 1 2 3 ])
+
+range is 0,4
+
+y(z)=Σx[n]z**(-n)        
+
+n=0 -> 0
+
+n=1 -> 1/z
+
+n=2 -> 2/z**2
+
+n=3 -> 3/z**3
+
+hence y(z)=1/z + 2/z**2 + 3/z**3
 </p>
