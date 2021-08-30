@@ -1,3 +1,10 @@
+import os
+try:
+    from sympy import *
+except:
+    os.system("pip install sympy")
+import math
+import cmath
 class dts:
     def __init__(self,vec=[0],z=1) -> None:
         self.vec = vec
@@ -25,6 +32,7 @@ class dts:
             if(key+self.z<0 or key+self.z>=len(self.vec)):
                 return 0  
             return self.vec[key+self.z]
+
     def __setitem__(self, key, value):
         if(key+self.z>=len(self.vec)):
             self.vec += [0]*(key+self.z-len(self.vec)+1)
@@ -137,3 +145,31 @@ class dts:
         if(isinstance(other,dts) and self.vec==other.vec and self.z==other.z):
             return True
         return False
+    def z_transfom(self,at=None):
+        temp = dts(self.vec,self.z+1)
+        neg,pos = temp.range()
+        y = 0
+        z = symbols('z')
+        for n in range(neg,pos):
+            y+=temp[n]*(z**(-n))
+        if(at):
+            return y.subs(z,at)
+        return y
+    def fourier_transform(self,at=None):
+        temp = dts(self.vec,self.z+1)
+        neg,pos = temp.range()
+        y = 0
+        w = symbols('w')
+        c = -1j
+        for n in range(neg,pos):
+            y+=temp[n]*(exp(c*w*n))
+            pass
+        if(at):
+            return y.subs(w,at)
+        return y
+
+x = dts([7,3,4,9,5],1)
+y = x.z_transfom()
+print(y)
+y = x.fourier_transform()
+print(y)
