@@ -6,8 +6,11 @@ check tutorial.py for tutorial
 # Sample output for convolution
 <p>
 x[n] convolution h[n]
+  
 given x[n]  : [ 0^ 1 2 3 ]
+  
 given h[n]  : [ 1^ 1 2 1 ]
+  
 hence h[-n] : [ 1 2 1 1^ ]
 
 n ranges in lim(x[n])+lim(h[n]) from 0 to 6
@@ -65,7 +68,9 @@ hence y[n]=[ 0^ 1 3 7 8 8 3 ]
 # Sample output for corelation
 
 x[n] correlation h[n]
+  
 given x[n]  : [ 0^ 1 2 3 ]
+  
 given h[n]  : [ 1^ 1 2 1 ]
 
 n ranges in lim(x[n])+lim(h[-n]) from -3 to 3
