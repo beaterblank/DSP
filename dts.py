@@ -82,6 +82,15 @@ class dts:
         for i in range(neg,pos):
             o[i]=other[i]+self[i]
         return o
+    def __sub__(self,other):
+        o = dts()
+        lo = other.range()
+        ls = self.range()
+        pos = max(lo[1],ls[1])
+        neg = min(lo[0],ls[0])
+        for i in range(neg,pos):
+            o[i]=other[i]-self[i]
+        return o
     def spread(self,other):
         lo = other.range()
         ls = self.range()
@@ -98,6 +107,11 @@ class dts:
         s = 0
         for i in self.vec:
             s+=i
+        return s
+    def mul(self):
+        s = 1
+        for i in self.vec:
+            s*=i
         return s
     def __mul__(self,other):
         if(isinstance(other,dts)):
@@ -167,9 +181,3 @@ class dts:
         if(at):
             return y.subs(w,at)
         return y
-
-x = dts([7,3,4,9,5],1)
-y = x.z_transfom()
-print(y)
-y = x.fourier_transform()
-print(y)
