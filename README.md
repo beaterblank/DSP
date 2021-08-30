@@ -1,6 +1,10 @@
 # DSP
 
+devloped on python 3.9 so for best usage use in 3.9 or higher
+
 only need to download dsp.py and put it in ur current directory of python file to work
+file depends on sympy so u need to install sympy for this or u can just run the file will install itself
+to install sympy manually open ur command prompt and type "pip install sympy" 
 
 python program to perform discrete time operations
 
