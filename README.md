@@ -11,8 +11,17 @@ python program to perform discrete time operations
 check tutorial.py for sample uses
 
 ## This Module can perform Addition ,Subsraction, Dot-product, Convolution, Corelation, Scalar-product, Right and Left Shifting time, Time-scaling, Time reversal, Z-Transform, Fourier-Transform and more On discrete time Signals
+```python
+import dsp
+dsp.steps=True           #default is true
+x = dsp.dts([0,1,2,3],1) #declare x
+h = dsp.dts([1,1,2,1],1) #declare h
+```
 
 ## Sample output for addition
+```python
+x+h
+```
 ```
 adding signals([ 0^ 1 2 3 ],[ 1^ 1 2 1 ])
 range is 0,4
@@ -28,6 +37,9 @@ y[3]=x[3]+h[3]=1+3=4
 hence y = [ 1^ 2 4 4 ]
 ```
 ## Sample output for Subsraction
+```python
+x-h
+```
 ```  
 substracting signals ([ 0^ 1 2 3 ],[ 1^ 1 2 1 ])
 range is 0,4
@@ -43,6 +55,9 @@ y[3]=x[3]-h[3]=3-1=2
 hence y = [ -1^ 0 0 2 ]
 ```
 ## Sample output for dot_product
+```python
+x@h
+```
 ```
 multipyting signals([ 0^ 1 2 3 ],[ 1^ 1 2 1 ])
 range is 0,4
@@ -59,6 +74,9 @@ hence y = [ 0^ 1 4 3 ]
 ```
 
 ## Sample output for convolution
+```python
+x*h
+```
 ```
 x[n] convolution h[n]
   
@@ -121,6 +139,9 @@ hence y[n]=[ 0^ 1 3 7 8 8 3 ]
   ```
 
 ## Sample output for corelation
+```python
+x^h
+```
 ```
 x[n] correlation h[n]
   
@@ -182,6 +203,9 @@ hence y[n]=[ 0 1 4 8^ 9 5 3 ]
 ```
 
 ## Sample output Fourier Transfrom 
+```python
+x.fourier_transform()
+```
 ```
 Fourier_Transfrom([ 0^ 1 2 3 ])
 
@@ -201,6 +225,9 @@ hence y(z)=3*exp(-3.0*I*w) + 2*exp(-2.0*I*w) + exp(-1.0*I*w)
 ```
 
 ## Sample output for Z Transform
+```python
+x.z_transform()
+```
 ```
 Z_Transfrom([ 0^ 1 2 3 ])
 
