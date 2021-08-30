@@ -5,6 +5,7 @@ except:
     os.system("pip install sympy")
 import math
 import cmath
+
 class dts:
     def __init__(self,vec=[0],z=1) -> None:
         self.vec = vec
@@ -126,7 +127,7 @@ class dts:
             string+="\n\nn ranges in lim(x[n])+lim(h[n]) from "+str(neg)+" to "+str(pos)
             y = dts([0]*(abs(neg)+pos),neg)
             for i in range(neg,pos+1):
-                string+=f"\n\ny[{i}]=summation(x[n]*h[{i}-n])\ny[{i}]=summation({self}.{temp.shift(i)})\ny[{i}]={(self@temp.shift(i)).sum()}"
+                string+=f"\n\ny[{i}]=Σ(x[n]*h[{i}-n])\ny[{i}]=Σ({self}.{temp.shift(i)})\ny[{i}]={(self@temp.shift(i)).sum()}"
                 y[i] = (self@temp.shift(i)).sum()
             string+="\nhence y[n]="+str(y)
             if(self.steps):
@@ -139,22 +140,32 @@ class dts:
                 temp.vec[i]*=other
             return temp
     def __xor__(self,other):
-        string = ""
-        string+="given x[n]  : "+str(self)+"\ngiven h[n]  : "+str(other)
-        temp = other
-        neg1,pos1 = self.range()
-        neg2,pos2 = other[::-1].range()
-        neg = neg1+neg2
-        pos = pos1+pos2-2
-        string+="\n\nn ranges in lim(x[n])+lim(h[-n]) from "+str(neg)+" to "+str(pos)
-        y = dts([0]*(abs(neg)+pos),neg)
-        for i in range(neg,pos+1):
-            string+=f"\n\ny[{i}]=summation(x[n]*h[n+{i}])\ny[{i}]=summation({self}.{temp.shift(i)})\ny[{i}]={(self@temp.shift(i)).sum()}"
-            y[i] = (self@temp.shift(i)).sum()
-        string+="\nhence y[n]="+str(y)
-        if(self.steps):
-            print(string)
-        return y
+        if(isinstance(other,dts)):
+            string = ""
+            string+="given x[n]  : "+str(self)+"\ngiven h[n]  : "+str(other)
+            temp = other
+            neg1,pos1 = self.range()
+            neg2,pos2 = other[::-1].range()
+            neg = neg1+neg2
+            pos = pos1+pos2-2
+            string+="\n\nn ranges in lim(x[n])+lim(h[-n]) from "+str(neg)+" to "+str(pos)
+            y = dts([0]*(abs(neg)+pos),neg)
+            for i in range(neg,pos+1):
+                string+=f"\n\ny[{i}]=Σ(x[n]*h[n+{i}])\ny[{i}]=Σ({self}.{temp.shift(i)})\ny[{i}]={(self@temp.shift(i)).sum()}"
+                y[i] = (self@temp.shift(i)).sum()
+            string+="\nhence y[n]="+str(y)
+            if(self.steps):
+                print(string)
+            return y
+        if(isinstance(other,int)):
+            if(other>=1):
+                temp = dts()
+                neg,pos = self.range()
+                for i in range(neg,pos):
+                    temp[other*i]=self[i]
+                return temp
+        return self
+
     def __eq__(self,other) -> bool:
         if(isinstance(other,dts) and self.vec==other.vec and self.z==other.z):
             return True
