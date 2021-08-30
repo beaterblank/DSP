@@ -1,4 +1,7 @@
 # DSP
+
+only need to download dsp.py and put it in ur current directory of python file to work
+
 python program to perform discrete time operations
 
 check tutorial.py for sample uses
