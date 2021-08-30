@@ -1,4 +1,6 @@
-from dts import dts
-
-x  = dts([1,2,3,4,5],-2)
-print(x^3)
+import dsp
+x  = dsp.dts([0,1,2,3])
+y  = dsp.dts([1,1,2,1])
+print(x)
+z = x*y
+print(z)
