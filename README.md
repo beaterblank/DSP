@@ -1,5 +1,5 @@
 # DSP
-python program to perform discreate time operations
+python program to perform discrete time operations
 
 check tutorial.py for tutorial 
 
