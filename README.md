@@ -8,7 +8,7 @@ to install sympy manually open ur command prompt and type "pip install sympy"
 
 python program to perform discrete time operations
 
-check tutorial.py for sample uses
+check tutorial.py for more sample uses
 
 ## This Module can perform Addition ,Subsraction, Dot-product, Convolution, Corelation, Scalar-product, Right and Left Shifting time, Time-scaling, Time reversal, Z-Transform, Fourier-Transform and more On discrete time Signals
 ```python
