@@ -3,7 +3,9 @@ python program to perform discrete time operations
 
 check tutorial.py for tutorial 
 
-# Sample output for convolution
+# This Module can perform Addition Subsraction Dot-product Convolution Corelation Scalar-product Right and Left Shifting time Time-scaling Time reversal Z-Transform Fourier-Transform and more
+
+## Sample output for convolution
 <p>
 x[n] convolution h[n]
   
@@ -65,7 +67,7 @@ y[6]=3
 hence y[n]=[ 0^ 1 3 7 8 8 3 ]
   
 
-# Sample output for corelation
+## Sample output for corelation
 
 x[n] correlation h[n]
   
