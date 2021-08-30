@@ -190,7 +190,7 @@ n=3 -> 3*exp(-3.0*I*w)
 
 hence y(z)=3*exp(-3.0*I*w) + 2*exp(-2.0*I*w) + exp(-1.0*I*w)
 
-## Z Transform
+## Sample output for Z Transform
 Z_Transfrom([ 0^ 1 2 3 ])
 
 range is 0,4
