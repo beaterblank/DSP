@@ -3,7 +3,7 @@ python program to perform discrete time operations
 
 check tutorial.py for tutorial 
 
-# This Module can perform Addition Subsraction Dot-product Convolution Corelation Scalar-product Right and Left Shifting time Time-scaling Time reversal Z-Transform Fourier-Transform and more
+## This Module can perform Addition Subsraction Dot-product Convolution Corelation Scalar-product Right and Left Shifting time Time-scaling Time reversal Z-Transform Fourier-Transform and more
 
 ## Sample output for convolution
 <p>
