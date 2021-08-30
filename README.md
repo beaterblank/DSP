@@ -1,14 +1,14 @@
 # DSP
 
-devloped on python 3.9 so for best usage use in 3.9 or higher
+devloped on ```python 3.9``` so for best usage use in 3.9 or higher
 
-only need to download dsp.py and put it in ur current directory of python file to work
+only need to ```download dsp.py``` and put it in ur ```current directory``` of python file to work
 file depends on sympy so u need to install sympy for this or u can just run the file will install itself
 to install sympy manually open ur command prompt and type ```pip install sympy```
 
 python program to perform discrete time operations
 
-check tutorial.py for more sample uses
+check ```tutorial.py``` for more sample uses
 
 ## This Module can perform Addition ,Subsraction, Dot-product, Convolution, Corelation, Scalar-product, Right and Left Shifting time, Time-scaling, Time reversal, Z-Transform, Fourier-Transform and more On discrete time Signals
 ```python
@@ -20,7 +20,7 @@ h = dsp.dts([1,1,2,1],1) #declare h
 
 ## Sample output for addition
 ```python
-x+h
+x+h #add
 ```
 ```
 adding signals([ 0^ 1 2 3 ],[ 1^ 1 2 1 ])
@@ -38,7 +38,7 @@ hence y = [ 1^ 2 4 4 ]
 ```
 ## Sample output for Subsraction
 ```python
-x-h
+x-h #subsract
 ```
 ```  
 substracting signals ([ 0^ 1 2 3 ],[ 1^ 1 2 1 ])
@@ -56,7 +56,7 @@ hence y = [ -1^ 0 0 2 ]
 ```
 ## Sample output for dot_product
 ```python
-x@h
+x@h #dotproduct
 ```
 ```
 multipyting signals([ 0^ 1 2 3 ],[ 1^ 1 2 1 ])
@@ -75,7 +75,7 @@ hence y = [ 0^ 1 4 3 ]
 
 ## Sample output for convolution
 ```python
-x*h
+x*h #convolution
 ```
 ```
 x[n] convolution h[n]
@@ -140,7 +140,7 @@ hence y[n]=[ 0^ 1 3 7 8 8 3 ]
 
 ## Sample output for corelation
 ```python
-x^h
+x^h #corelation
 ```
 ```
 x[n] correlation h[n]
@@ -204,7 +204,7 @@ hence y[n]=[ 0 1 4 8^ 9 5 3 ]
 
 ## Sample output Fourier Transfrom 
 ```python
-x.fourier_transform()
+x.fourier_transform() #fourier Transfrom
 ```
 ```
 Fourier_Transfrom([ 0^ 1 2 3 ])
@@ -226,7 +226,7 @@ hence y(z)=3*exp(-3.0*I*w) + 2*exp(-2.0*I*w) + exp(-1.0*I*w)
 
 ## Sample output for Z Transform
 ```python
-x.z_transform()
+x.z_transform() #z transfrom
 ```
 ```
 Z_Transfrom([ 0^ 1 2 3 ])
